@@ -1,10 +1,16 @@
+import React, { Suspense, lazy } from 'react';
+
+// Importación Lazy para Code Splitting (Concepto 6)
+const HeavyComponent = lazy(() => import('./examples/6-CodeSplitting/HeavyComponent'));
+
+// Importaciones de otros conceptos
 import { UserContainer } from './examples/1-ContainerPresentational/UserContainer';
 import { ProtectedDashboard } from './examples/2-HOC/Dashboard';
 import { MouseTracker } from './examples/3-RenderProps/MouseTracker';
 import { HookExample } from './examples/4-CustomHooks/HookExample';
-// Importamos el Provider y el Componente del Concepto 5
 import { ThemeProvider } from './context/ThemeContext';
 import { ThemeComponent } from './examples/5-ContextAPI/ThemeComponent';
+
 import './App.css';
 
 function App() {
@@ -39,10 +45,17 @@ function App() {
       <hr style={{ margin: '30px 0' }}/>
 
       <h2>5. Context API</h2>
-      {/* Envolvemos nuestro componente con el Provider */}
       <ThemeProvider>
         <ThemeComponent />
       </ThemeProvider>
+
+      <hr style={{ margin: '30px 0' }}/>
+
+      <h2>6. Code Splitting</h2>
+      {/* Suspense muestra un fallback mientras el componente "pesado" se descarga */}
+      <Suspense fallback={<div>Cargando componente pesado...</div>}>
+        <HeavyComponent />
+      </Suspense>
     </>
   );
 }
