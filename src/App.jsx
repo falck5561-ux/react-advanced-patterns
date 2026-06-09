@@ -1,5 +1,6 @@
 import { UserContainer } from './examples/1-ContainerPresentational/UserContainer';
 import { ProtectedDashboard } from './examples/2-HOC/Dashboard';
+import { MouseTracker } from './examples/3-RenderProps/MouseTracker'; // Importamos el nuevo
 import './App.css';
 
 function App() {
@@ -14,8 +15,18 @@ function App() {
       <hr style={{ margin: '30px 0' }}/>
 
       <h2>2. Higher-Order Component (HOC)</h2>
-      {/* Le pasamos un prop normal, el HOC se encarga de pasarlo al componente original */}
       <ProtectedDashboard userRole="Administrador" />
+
+      <hr style={{ margin: '30px 0' }}/>
+
+      <h2>3. Render Props</h2>
+      {/* Le pasamos una función a la prop "render" que recibe los datos y devuelve JSX */}
+      <MouseTracker render={(position) => (
+        <div style={{ backgroundColor: '#e6f7ff', padding: '10px', borderRadius: '5px' }}>
+          <strong>Coordenadas en vivo:</strong>
+          <p>X: {position.x} | Y: {position.y}</p>
+        </div>
+      )} />
     </>
   );
 }
