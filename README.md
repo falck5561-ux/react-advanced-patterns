@@ -1,16 +1,16 @@
-# React + Vite
+# React Advanced Patterns
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto para la materia de Ingeniería de Software. Implementación de patrones avanzados en React para mejorar la escalabilidad y reutilización de código.
 
-Currently, two official plugins are available:
+## Conceptos Implementados
+1. **Contenedor y Presentacional**: Separación de lógica de negocio y UI.
+2. **HOCs (Higher-Order Components)**: Envolturas para lógica reutilizable (Auth).
+3. **Render Props**: Compartir lógica mediante funciones como props.
+4. **Custom Hooks**: Encapsulamiento de lógica de fetch en `useFetch`.
+5. **Context API**: Manejo de tema global (Light/Dark).
+6. **Code Splitting**: Carga diferida con `React.lazy` y `Suspense`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Cómo ejecutarlo
+1. Clona el repositorio.
+2. Instala dependencias: `npm install`
+3. Ejecuta el servidor: `npm run dev`
